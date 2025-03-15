@@ -1,3 +1,25 @@
+(getTankModel firstTank) (getTankAttack firstTank) (getTankHealth firstTank) (getTankModel secondTank) (getTankAttack secondTank) (getTankHealth secondTank)
+
+battle 1 (getTankModel t34) (getTankAttack t34) (getTankHealth t34) (getTankModel tiger) (getTankAttack tiger) (getTankHealth tiger)
+
+
+| (getTankHealth (fight (fight firstTank secondTank) firstTank)) <= 0 = secondTank
+            | otherwise = battle (n - 1) firstTank secondTank  
+  
+  where hpAfterDmg
+            | ((getTankHealth dTank) - (getTankAttack aTank)) <= 0 = 0
+            | otherwise = ((getTankHealth dTank) - (getTankAttack aTank))
+
+where enemyA = getTankAttack aTank
+          m = getTankModel dTank
+          a = getTankAttack dTank
+          hp = getTankHealth dTank
+
+let myCupAfterManySips = foldl makeSipFromCup myCap
+
+someHuman.getHeight()
+getHeight someHuman
+
 f $ x = f x
 g a b c d -> (((g a) b) d)
 
