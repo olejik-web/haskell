@@ -1,16 +1,18 @@
-normalBattle n firstTank secondTank = let firstModel = getTankModel firstTank
-                                          firstAttack = getTankAttack firstTank
-                                          firstHealth = 2 
-                                          secondModel = getTankModel firstTank
-                                          secondAttack = getTankAttack firstTank
-                                          secondHealth = 2 
-                                      in battle n firstModel firstAttack 3 "" 3 3
+normalBattle n firstTank secondTank = battle n firstModel firstAttack 3 "" 3 3
+    let firstModel = getTankModel firstTank
+        firstAttack = getTankAttack firstTank
+        firstHealth = 2
+        secondModel = getTankModel firstTank
+        secondAttack = getTankAttack firstTank
+        secondHealth = 2
+    in (firstModel, firstAttack)
 
 battle 0 firstTankModel firstTankAttack firstTankHealth secondTankModel secondTankAttack secondTankHealth = winnerTankModel
     where winnerTankModel
             | secondTankHealth < firstTankHealth = "Winner: " ++ firstTankModel
             | secondTankHealth > firstTankHealth = "Winner: " ++ secondTankModel
             | otherwise = "NothingWin"
+
 battle n firstTankModel firstTankAttack firstTankHealth secondTankModel secondTankAttack secondTankHealth = winnerTankModel
     where roundSecondTankHealth = secondTankHealth - firstTankAttack
           roundFirstTankHealth
