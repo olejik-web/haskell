@@ -1,0 +1,62 @@
+auto ("Lada", 100, 10, 0, 20, A)
+auto ("Bugatti", 100, 20, 0, 50)
+auto ("BMW", 100, 25, 0, 40)
+auto ("KIA", 100, 30, 0, 60)
+
+
+
+data Icecream = Vanilla | Chocolate deriving (Show, Eq, Ord)
+
+data SixSideCube = E1 | E2 | E3 | E4 | E5 | E6
+
+data Coin = One | Two
+
+instance Show Coin where 
+    show One = "One"
+    show Two = "Two"
+
+instance Show SixSideCube where 
+    show E1 = "1"
+    show E2 = "2"
+    show E3 = "3"
+    show E4 = "4"
+    show E5 = "5"
+    show E6 = "6"
+
+instance Eq SixSideCube where 
+  (==) E1 E1 = True
+  (==) E2 E2 = True
+  (==) E3 E3 = True
+  (==) E4 E4 = True
+  (==) E5 E5 = True
+  (==) E6 E6 = True
+  (==) _ _ = False
+
+
+instance Ord SixSideCube where 
+    compare E6 E6 = EQ
+    compare E6 _ = GT
+    compare _ E6 = LT
+    compare E5 E5 = EQ
+    compare E5 _ = GT
+    compare _ E5 = LT
+    compare E4 E4 = EQ
+    compare E4 _ = GT
+    compare _ E4 = LT
+    compare E3 E3 = EQ
+    compare E3 _ = GT
+    compare _ E3 = LT
+    compare E2 E2 = EQ
+    compare E2 _ = GT
+    compare _ E2 = LT
+    compare E1 E1 = EQ
+    compare _ E1 = LT
+
+instance Eq SixSideCube where 
+  (==) E1 E1 = True
+  (==) E2 E2 = True
+  (==) E3 E3 = True
+  (==) E4 E4 = True
+  (==) E5 E5 = True
+  (==) E6 E6 = True
+  (==) _ _ = False
