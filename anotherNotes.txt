@@ -1,8 +1,9 @@
-auto ("Lada", 100, 10, 0, 20, A)
-auto ("Bugatti", 100, 20, 0, 50)
-auto ("BMW", 100, 25, 0, 40)
-auto ("KIA", 100, 30, 0, 60)
+let firstAuto = auto ("Lada", 100, 10, 0, 20, A)
+let secondAuto = auto ("Bugatti", 100, 20, 0, 50, F)
+let thirdAuto = auto ("BMW", 100, 25, 0, 40, F)
+let fourAuto = auto ("KIA", 100, 30, 0, 60, B)
 
+let myAuto = ("Lada", 100, 10, 0, 20, A)
 
 
 data Icecream = Vanilla | Chocolate deriving (Show, Eq, Ord)
