@@ -63,7 +63,7 @@ maxBits = length (intToBits' maxBound)
 
 intToBits :: Int -> Bits
 intToBits n = leadingFalses ++ reversedBits
-  where reversedBits = reverse intToBits' n
+  where reversedBits = reverse $ intToBits' n
         missingBits = maxBits - (length reversedBits)
         leadingFalses = take missingBits (cycle [False])
 
@@ -101,4 +101,4 @@ disposableNoteEncode note msg = map bitsToChar bits
   where bits = disposableNoteEncode' note msg
 
 encodeNdecode :: String -> String
-encodeNdecode = disposableNoteEncode note
+encodeNdecode msg = disposableNoteEncode disposableNote msg
